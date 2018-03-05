@@ -4,7 +4,7 @@
     "require": {
         "php": "^7.0|^7.1|^7.2",
         "twig/twig": "^2.4",
-        "magento/framework": "100.2.*|100.3.*",
+        "magento/magento2-base": "^2.2|^2.3",
         "msp/module-notifier": "^0.1",
         "msp/module-notifier-template-api": "^0.1"
     },
