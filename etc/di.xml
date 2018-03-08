@@ -96,4 +96,38 @@
             </argument>
         </arguments>
     </type>
+
+    <!-- UI components for admin (must be in global area) -->
+
+    <!-- Template grid: START -->
+    <virtualType name="MSP\NotifierTemplate\Ui\DataProvider\DatabaseTemplateFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular"
+                      xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext"
+                      xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="msp_notifier_template_databasetemplate_data_source"
+                      xsi:type="string">MSP\NotifierTemplate\Model\ResourceModel\UI\DatabaseTemplate\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="MSP\NotifierTemplate\Model\ResourceModel\UI\DatabaseTemplate\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">msp_notifier_template</argument>
+            <argument name="resourceModel"
+                      xsi:type="string">MSP\NotifierTemplate\Model\ResourceModel\DatabaseTemplate\Collection</argument>
+        </arguments>
+    </virtualType>
+    <!-- Template grid: END -->
 </config>
