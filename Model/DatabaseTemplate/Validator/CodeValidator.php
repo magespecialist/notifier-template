@@ -20,7 +20,7 @@ class CodeValidator implements DatabaseTemplateValidatorInterface
      */
     public function execute(DatabaseTemplateInterface $template): bool
     {
-        if (!preg_match('/^[\w_]+$/', $template->getCode())) {
+        if (!preg_match('/^(\w+:)?[\w_]+$/', $template->getCode())) {
             throw new \InvalidArgumentException(
                 '' . __('Invalid template identifier: Only alphanumeric chars + columns')
             );
