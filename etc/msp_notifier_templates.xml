@@ -10,7 +10,7 @@
 
     <templates>
         <template id="_default"
-                  label="Default template file"
+                  label="Default Empty Template"
                   file="MSP_NotifierTemplate::default.twig" />
     </templates>
 </config>
