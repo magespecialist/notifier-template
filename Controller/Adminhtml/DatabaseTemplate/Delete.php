@@ -47,7 +47,7 @@ class Delete extends Action
 
         try {
             $template = $this->templateRepository->get($templateId);
-            $this->templateRepository->deleteById($template->getId());
+            $this->templateRepository->deleteById((int) $template->getId());
             $this->messageManager->addSuccessMessage(__('Template "%1" deleted.', $template->getName()));
         } catch (\Exception $e) {
             $this->messageManager->addErrorMessage(__('Could not delete template: %1.', $e->getMessage()));
