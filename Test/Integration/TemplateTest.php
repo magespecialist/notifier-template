@@ -19,7 +19,7 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
     /**
      * @inheritdoc
      */
-    public function setUp()
+    public function setUp(): void
     {
         // @codingStandardsIgnoreStart
         $this->getMessageText = Bootstrap::getObjectManager()->get(
